@@ -22,7 +22,7 @@ module Controller (
   logic [6:0] R_TYPE, I_TYPE_IMM, LW, SW, BR;
 
   // atribuição dos opcodes
-  assign R_TYPE = 7'b0110011;  //add,and
+  assign R_TYPE = 7'b0110011;  //add, sub, and, or, xor
   assign I_TYPE_IMM = 7'b0010011; // aritmeticas e logicas imediatas (addi, ...)
   assign LW = 7'b0000011;  //lw
   assign SW = 7'b0100011;  //sw
