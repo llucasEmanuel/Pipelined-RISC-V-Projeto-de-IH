@@ -17,17 +17,18 @@ module alu#(
             case(Operation)
             4'b0000: // AND
                 ALUResult = SrcA & SrcB;
-	    4'b0001: // OR
-		ALUResult = SrcA | SrcB;
+			4'b0001: // OR
+				ALUResult = SrcA | SrcB;
             4'b0010: // ADD
-		ALUResult = $signed(SrcA) + $signed(SrcB);
-	    4'b0011: // SUB
-		ALUResult = $signed(SrcA) - $signed(SrcB);
-
-			// xor
+                ALUResult = $signed(SrcA) + $signed(SrcB);
+			4'b0011: // SUB
+				ALUResult = $signed(SrcA) - $signed(SrcB);
+            4'b0100: // XOR
+                ALUResult = SrcA ^ SrcB;
+                
 			// shifts left e right lógicos e aritméticos
-			// maior que, menor que
-			// diferente
+			// maior ou igual que (bge), menor que (blt)
+			// diferente (bne)
 
             4'b1000: // Equal
                 ALUResult = (SrcA == SrcB) ? 1 : 0;
